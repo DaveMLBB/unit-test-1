@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/crudtest
+    username: root
+    password: ciao
+  jpa:
+    database: mysql
+    show_sql: true
+    hibernate:
+      ddl-auto: create-drop
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: test
+    password: test
+    driver-class-name:  org.h2.Driver
+  jpa:
+    database: h2
+  h2:
+    console:
+      enabled: true
+
+
+
